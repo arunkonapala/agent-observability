@@ -15,6 +15,11 @@ One `agent_turn` root span → three LLM calls interleaved with three ledger
 tool calls. Each `llm` span carries `gen_ai.usage.input_tokens` /
 `output_tokens` and `agentobs.cost.usd`.
 
+Expanding an `llm` span shows the cost attribution alongside the GenAI
+semconv attributes:
+
+![Jaeger span detail with token usage and USD cost attributes](docs/span-cost-detail-crop.png)
+
 ## Why
 
 Agent loops are opaque: a single user turn can fan out into many model
